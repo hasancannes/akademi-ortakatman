@@ -1,0 +1,7 @@
+{
+  "products": [
+    { "name": "Süt", "price": 15, "id": 1 },
+    { "name": "Ekmek", "price": 10, "id": 2 }
+  ],
+  "categories": []
+}
