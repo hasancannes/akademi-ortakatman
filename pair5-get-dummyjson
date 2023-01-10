@@ -1,0 +1,832 @@
+{
+  "info": {
+    "_postman_id": "aaf09f03-1fc5-42a5-9d95-5bd250ace031",
+    "name": "dummy_json_api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "get_all_products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dummyjson.com/products",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_product_by_id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dummyjson.com/products/1",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_products_search",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dummyjson.com/products/search?q=phone",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "phone"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "limit%skip_products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/products?limit=3&skip=5&select=title,price,rating,'",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "3"
+                },
+                {
+                  "key": "skip",
+                  "value": "5"
+                },
+                {
+                  "key": "select",
+                  "value": "title,price,rating,'"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_all_products_categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/products/categories",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "categories"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_products_of_a_category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://dummyjson.com/products/category/fragrances",
+              "protocol": "https",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "products",
+                "category",
+                "fragrances"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "carts",
+      "item": [
+        {
+          "name": "get_all_carts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/carts",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "carts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_a_single_cart",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/carts/5",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "carts",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_carts_of_a_user",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/carts/user/97",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "carts",
+                "user",
+                "97"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "get_all_users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/users",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_a_single_user",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/users/1",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_search_users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/users/search?q=John",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "John"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_filter_users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/users/filter?key=hair.type&value=Curly",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users",
+                "filter"
+              ],
+              "query": [
+                {
+                  "key": "key",
+                  "value": "hair.type"
+                },
+                {
+                  "key": "value",
+                  "value": "Curly"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "limit&skip_users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/users?limit=5&skip=10&select=firstName,lastName,age",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                },
+                {
+                  "key": "skip",
+                  "value": "10"
+                },
+                {
+                  "key": "select",
+                  "value": "firstName,lastName,age"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_users_carts_by_user_id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/users/5/carts",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users",
+                "5",
+                "carts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_users_posts_by_user_id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/users/5/posts",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users",
+                "5",
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_users_todos_by_user_id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/users/5/todos",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "users",
+                "5",
+                "todos"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "posts",
+      "item": [
+        {
+          "name": "get_all_posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/posts",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_a_single_post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/posts/1",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_search_posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/posts/search?q=trap",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "trap"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "limit%skip_posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/posts?limit=10&skip=20&select=title,reactions,userId",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "skip",
+                  "value": "20"
+                },
+                {
+                  "key": "select",
+                  "value": "title,reactions,userId"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_all_posts_by_user_id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/posts/user/5",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "user",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_posts_comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/posts/1/comments",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1",
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "comments",
+      "item": [
+        {
+          "name": "get_all_comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/comments",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "comments"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_a_single_comment",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/comments/1",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "limit&skip_comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/comments?limit=10&skip=10&select=body,postId'",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "comments"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                },
+                {
+                  "key": "skip",
+                  "value": "10"
+                },
+                {
+                  "key": "select",
+                  "value": "body,postId'"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_all_comments_by_post_id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/comments/post/5",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "post",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "todos",
+      "item": [
+        {
+          "name": "get_all_todos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/todos",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_a_single_todo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/todos/1",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "todos",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_a_random_todo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/todos/random",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "todos",
+                "random"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "limit%skip_todo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/todos?limit=3&skip=1",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "3"
+                },
+                {
+                  "key": "skip",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_all_todos_by_user_id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/todos/user/5",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "todos",
+                "user",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "quotes",
+      "item": [
+        {
+          "name": "get_all_quotes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/quotes",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "quotes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_a_single_quote",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/quotes/1",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "quotes",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get_a_random_quote",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/quotes/random",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "quotes",
+                "random"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "limit&skip_quote",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "dummyjson.com/quotes?limit=3&skip=3",
+              "host": [
+                "dummyjson",
+                "com"
+              ],
+              "path": [
+                "quotes"
+              ],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "3"
+                },
+                {
+                  "key": "skip",
+                  "value": "3"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
