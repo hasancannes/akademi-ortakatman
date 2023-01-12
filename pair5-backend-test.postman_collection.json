@@ -1,0 +1,3348 @@
+{
+	"info": {
+		"_postman_id": "1fd8e1b6-3f93-48b3-bb75-dfef7c0e8bda",
+		"name": "pair5-backend-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customer_controller",
+			"item": [
+				{
+					"name": "update_customer",
+					"item": [
+						{
+							"name": "same_nationality_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"custId\": 483,\r\n    \"firstName\": \"string\",\r\n    \"middleName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"birthDate\": \"2023-01-11\",\r\n    \"gender\": 0,\r\n    \"fatherName\": \"string\",\r\n    \"motherName\": \"string\",\r\n    \"nationalityId\": 21325158255\r\n}\r\n// Beklenen çıktı alındı. Test başarılı",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_firstname",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": 77777788881\r\n}\r\n// Hata mesajı verilmedi. Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_lastname",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"middleName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": 77777788880\r\n}\r\n// Hata ayıklanma hazırlanmamış. Test başarısız",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_birthdate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": 77777788880\r\n}\r\n// Hata mesajı verildi. Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_gender",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": 77777788889\r\n}\r\n// Hata ayıklama hazırlanmamış. Test başarısız",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_nationality_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\"\r\n}\r\n// Hata exception hazırlanmamış. Test başarısız",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_birthdate",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": 77777788880\r\n}\r\n// 18 yaş sınırlaması konulmamış. Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_gender",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 10,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": 77777788882\r\n}\r\n// Hata mesajı verilmedi. Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_first_name",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"firstName\": 3,\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": 77777788877\r\n}\r\n// Hata mesajı verilmedi. Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_last_name",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"custId\": 1641,\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": 3,\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": 77777788880\r\n}\r\n// Hata mesajı verilmedi. Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/update-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"update-customer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "filter_customer",
+					"item": [
+						{
+							"name": "not_exist_nationality_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nationalityId\": 1000000\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_nationality_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nationalityId\": 0\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_nationality_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nationalityId\": -1\r\n}\r\n// Hata mesajı verildi; fakat hata ile uyumlu değil.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_customer_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"customerId\": 403\r\n\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "not_exist_customer_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"customerId\": 0\r\n\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_customer_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"customerId\": -1\r\n\r\n}\r\n// Hata mesajı değişmeli.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_account_number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountNumber\": 382\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "not_exist_account_number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountNumber\": 0\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_account_number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountNumber\": -1\r\n}\r\n// Hata mesajı değişmelidir.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_contact_data_gsm_number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gsmNumber\": 5545495237\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "not_exist_contact_data_gsm_number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gsmNumber\": 21312\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_contact_data_gsm_number Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"gsmNumber\": -1\r\n}\r\n// Hata mesajı değişmelidir.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_first_name",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"mert\"\r\n}\r\n// Test Başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "first_name_pagination_control",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"a\"\r\n}\r\n// Pagination yapılmadığından, test hatalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "first_name_letter_including",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"ç\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_last_name",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"lastName\": \"yılmaz\"\r\n\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "last_name_pagination_control",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"lastName\": \"ç\"\r\n\r\n}\r\n// Pagination yapılmadığından test hatalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "last_name_letter_including",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"lastName\": \"y\"\r\n\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_order_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"orderId\": 190\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "not_exist_order_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"orderId\": 1\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_order_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\r\n  \"orderId\": -1\r\n}\r\n// Hata mesajı değişmelidir.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "three_box_filled",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nationalityId\": 77777788888,\r\n  \"firstName\": \"pr\",\r\n  \"lastName\": \"pr\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/filter-customer",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"filter-customer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete_customer",
+					"item": [
+						{
+							"name": "delete_customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/delete-customer?customerId=403",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"delete-customer"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "403"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_not_exist_customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 0\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/delete-customer?customerId=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"delete-customer"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_wrong_type_customer_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": \"a\"\r\n}\r\n// Hata mesajı değişmelidir.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer/delete-customer?customerId=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"delete-customer"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "create_customer",
+					"item": [
+						{
+							"name": "same_nationality_id Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993036\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarılı",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_firstname Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993030\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_lastname Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993038\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_birthdate Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993031\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarılı.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_gender Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993020\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "c",
+									"host": [
+										"c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_nationality_id Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_birthdate Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993022\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// 18 yaş sınırlaması konulmamış. Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_gender Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 1000,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993030\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_first_name Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": 3,\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993050\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_last_name Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": 3,\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993070\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_country",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "eng",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993086\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_city",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "eng",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097903036\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_street",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "eng",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097293036\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_flat_number",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "eng",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67017993036\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_address_description",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "eng",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"61097993036\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "email_validation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "eng",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993036\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"mobilePhone\": \"24517481445\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarısız.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"49243770252\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"homePhone\": \"57309082665\",\r\n  \"mobilePhone\": \"73833842550\",\r\n  \"fax\": \"67897984093\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_mobile_phone",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "eng",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"middleName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"birthDate\": \"2023-01-11\",\r\n  \"gender\": 0,\r\n  \"fatherName\": \"string\",\r\n  \"motherName\": \"string\",\r\n  \"nationalityId\": \"67097993036\",\r\n  \"addressWhenCreateCustomerRequests\": [\r\n    {\r\n      \"countryName\": \"string\",\r\n      \"city\": \"string\",\r\n      \"streetName\": \"string\",\r\n      \"flatNumber\": 0,\r\n      \"adressDescription\": \"string\"\r\n    }\r\n  ],\r\n  \"email\": \"string@gmail\",\r\n  \"homePhone\": \"13595927388\",\r\n  \"fax\": \"73979918258\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/api/customer/create-customer",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer",
+										"create-customer"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "customer_account_controller",
+			"item": [
+				{
+					"name": "update_cust_acc",
+					"item": [
+						{
+							"name": "not_exist_cust_acc_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 0,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 0,\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_cust_acc_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 328,\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "not_exist_addr_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 0,\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_addr_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 328,\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_cust_acc_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 328,\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// exception yazılmalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_addr_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// Exception yazılmalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_bldg_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 328,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_addr_descr",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 328,\r\n    \"bldgId\": 0,\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_city",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 328,\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"strtName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_country",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 328,\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"strtName\": \"string\"\r\n  }\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_street",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"updateAddressRequest\": {\r\n    \"addressId\": 328,\r\n    \"bldgId\": 0,\r\n    \"addrDesc\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"cntryName\": \"string\"\r\n  }\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check_update_address_request",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/update-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"update-customer-account"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete_cust_acc",
+					"item": [
+						{
+							"name": "delete_not_exist_cust_acc",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/delete-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"delete-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_exist_cust_acc",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 401\r\n}\r\n// Dönen response doğru fakat; database'de active status 0'a çekilmedi. Delete yapısı çalışmamaktadır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/delete-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"delete-customer-account"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete_prod_invl_cust_acc",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerAccountId\": 1583\r\n}\r\n// Hata mesajı doğrudur. Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/delete-customer-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"delete-customer-account"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add_billing_acc",
+					"item": [
+						{
+							"name": "exist_cust_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 382,\r\n  \"accountName\": \"string\",\r\n  \"description\": \"string\",\r\n  \"addressRequest\": {\r\n    \"addrDescripton\": \"string\",\r\n    \"cityName\": \"string\",\r\n    \"streetName\": \"string\",\r\n    \"buildingName\": \"string\"\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/add-customer-billing-account",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"add-customer-billing-account"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get_cust_acc",
+					"item": [
+						{
+							"name": "get_exist_cust_acc",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/get-by-customer-id?customerId=382",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"get-by-customer-id"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "382"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_not_exist_cust_acc!!Hatalı",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account/get-by-customer-id?customerId=-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account",
+										"get-by-customer-id"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "-1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "contact_medium_controller",
+			"item": [
+				{
+					"name": "email_validation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"partyId\": 0,\r\n  \"email\": \"ajsdnasjd@gmail\",\r\n  \"mobilePhone\": \"21395975548\",\r\n  \"homePhone\": \"string\",\r\n  \"fax\": \"string\"\r\n}\r\n// Test başarısız.",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contact-medium/update-customer-contact-medium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contact-medium",
+								"update-customer-contact-medium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mandatory_field_email",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"partyId\": 0,\r\n  \"mobilePhone\": \"21395975548\",\r\n  \"homePhone\": \"string\",\r\n  \"fax\": \"string\"\r\n}\r\n// Test başarılı.",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contact-medium/update-customer-contact-medium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contact-medium",
+								"update-customer-contact-medium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mandatory_field_mobile_phone",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"partyId\": 0,\r\n  \"email\": \"ajsdnasjd@gmail\",\r\n  \"homePhone\": \"string\",\r\n  \"fax\": \"string\"\r\n}\r\n// Test başarılı.",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contact-medium/update-customer-contact-medium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contact-medium",
+								"update-customer-contact-medium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mobile_phone_validation",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"partyId\": 0,\r\n  \"email\": \"ajsdnasjd@gmail.com\",\r\n  \"mobilePhone\": \"23\",\r\n  \"homePhone\": \"string\",\r\n  \"fax\": \"string\"\r\n}\r\n// Test başarılıdır.",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contact-medium/update-customer-contact-medium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contact-medium",
+								"update-customer-contact-medium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put_just_mandatory_fields",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"partyId\": 0,\r\n  \"email\": \"ajssadasasd@gmail.com\",\r\n  \"mobilePhone\": \"11111111111\"\r\n}\r\n// Test başarısız.",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contact-medium/update-customer-contact-medium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contact-medium",
+								"update-customer-contact-medium"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mandatory_field_party_id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ajsdnasjd@gmail\",\r\n  \"mobilePhone\": \"21395975548\",\r\n  \"homePhone\": \"string\",\r\n  \"fax\": \"string\"\r\n}\r\n// Test başarılı fakat exception yazılmamış.",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/contact-medium/update-customer-contact-medium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"contact-medium",
+								"update-customer-contact-medium"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "address_controller",
+			"item": [
+				{
+					"name": "update_address",
+					"item": [
+						{
+							"name": "mandatory_field_city",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 281,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"strtName\": \"string\",\r\n  \"cntryName\": \"string\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_address_description",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 281,\r\n  \"bldgId\": 0,\r\n  \"cityName\": \"string\",\r\n  \"strtName\": \"string\",\r\n  \"cntryName\": \"string\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_street",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 0,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"cntryName\": \"string\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_country",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 0,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"strtName\": \"string\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_address_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"strtName\": \"string\",\r\n  \"cntryName\": \"string\"\r\n}\r\n// Exception yazılmalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_bldg_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"strtName\": \"string\",\r\n  \"cntryName\": \"string\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validation_city",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 282,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\":\"100\",\r\n  \"strtName\": \"string\",\r\n  \"cntryName\": \"string\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validation_country",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 282,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\":\"İzmir\",\r\n  \"strtName\": \"string\",\r\n  \"cntryName\": \"100\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validation_street",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 282,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\":\"İzmir\",\r\n  \"strtName\": \"100\",\r\n  \"cntryName\": \"Turkey\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validation_address_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": -1,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\":\"İzmir\",\r\n  \"strtName\": \"100\",\r\n  \"cntryName\": \"Turkey\"\r\n}\r\n// Hata mesajı değişmelidir.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_address_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 282,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\":\"İzmir\",\r\n  \"strtName\": \"100\",\r\n  \"cntryName\": \"Turkey\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "not_exist_address_id",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 0,\r\n  \"bldgId\": 0,\r\n  \"addrDesc\": \"string\",\r\n  \"cityName\":\"İzmir\",\r\n  \"strtName\": \"100\",\r\n  \"cntryName\": \"Turkey\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/update-customer-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"update-customer-address"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "delete_address",
+					"item": [
+						{
+							"name": "not_exist_address",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 0\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/delete-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"delete-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_address",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": 282\r\n}\r\n// Test başarılıdır. Databaseden kontrol yapıldı, soft delete şeklinde çalışmaktadır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/delete-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"delete-address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_address",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addressId\": -1\r\n}\r\n// Hata mesajı değişmelidir.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/delete-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"delete-address"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "adding_new_address",
+					"item": [
+						{
+							"name": "mandatory_field_address_descr",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403,\r\n  \"cityName\": \"string\",\r\n  \"streetName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_city",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403,\r\n  \"addrDescription\": \"string\",\r\n  \"streetName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_street",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403,\r\n  \"addrDescription\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_bldg_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403,\r\n  \"addrDescription\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"streetName\": \"string\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "mandatory_field_cust_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"addrDescription\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"streetName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Exception yazılmalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "exist_cust_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403,\r\n  \"addrDescription\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"streetName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Test başarılıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "not_exist_cust_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 0,\r\n  \"addrDescription\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"streetName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Exception yazılmalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "wrong_cust_id",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": -1,\r\n  \"addrDescription\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"streetName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Exception yazılmalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validation_city",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403,\r\n  \"addrDescription\": \"string\",\r\n  \"cityName\": \"100\",\r\n  \"streetName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validation_street",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403,\r\n  \"addrDescription\": \"string\",\r\n  \"cityName\": \"string\",\r\n  \"streetName\": \"100\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// Test başarısızdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validation_addr_descr",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"customerId\": 403,\r\n  \"addrDescription\": \"najofnasnpdpkalmdsandpasjdasd asaskfmaskoğfnasifascnasklfaslaslifşknsafifkiasasnfkasaskfnasfkasfiifnkfinasnkfsankikfasfsakniaskjdnasjdnaskjdnasdjasndkalsdnkfşnaslfkasnfşasnfşsanfşaskszfasfasfasfasfasfasfasfasfasfasfasfasfasfasafsa\",\r\n  \"cityName\": \"string\",\r\n  \"streetName\": \"string\",\r\n  \"buildingName\": \"string\"\r\n}\r\n// 200 karakter sınırı için exception yazılmalıdır.",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/address/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"add"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get_address",
+					"item": [
+						{
+							"name": "get_all_address",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/address/get-all-address",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"address",
+										"get-all-address"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "customer_account_product_involvement_controller",
+			"item": [
+				{
+					"name": "get_customer_acc_prod_invl",
+					"item": [
+						{
+							"name": "get_exist_cust_acc_prod_invl",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account-product-involvement/get-by-id?custAcctProdInvlId=382",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account-product-involvement",
+										"get-by-id"
+									],
+									"query": [
+										{
+											"key": "custAcctProdInvlId",
+											"value": "382"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_not_exist_cust_acc_prod_invl Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account-product-involvement/get-by-id?custAcctProdInvlId=12312312",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account-product-involvement",
+										"get-by-id"
+									],
+									"query": [
+										{
+											"key": "custAcctProdInvlId",
+											"value": "12312312"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_all_exist_cust_acc_prod_invl",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account-product-involvement/get-all?customerAccountId=403",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account-product-involvement",
+										"get-all"
+									],
+									"query": [
+										{
+											"key": "customerAccountId",
+											"value": "403"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_all_not_exist_cust_acc_prod_invl Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/customer-account-product-involvement/get-all?customerAccountId=-1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"customer-account-product-involvement",
+										"get-all"
+									],
+									"query": [
+										{
+											"key": "customerAccountId",
+											"value": "-1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
